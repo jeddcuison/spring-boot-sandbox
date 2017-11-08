@@ -1,4 +1,4 @@
-package hello;
+package com.jlkwison.sandbox;
 
 import java.util.Arrays;
 
