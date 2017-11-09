@@ -10,6 +10,11 @@ public class WriterService {
 
     public void write(final OutputStream out) throws IOException {
         out.write("The quick brown fox jumped over the lazy dog!".getBytes());
+
+        for (int i = 0; i < 1000000; i++) {
+            out.write("The quick brown fox jumped over the lazy dog! The quick brown fox jumped over the lazy dog! The quick brown fox jumped over the lazy dog! The quick brown fox jumped over the lazy dog! The quick brown fox jumped over the lazy dog! The quick brown fox jumped over the lazy dog! The quick brown fox jumped over the lazy dog! The quick brown fox jumped over the lazy dog! The quick brown fox jumped over the lazy dog!".getBytes());
+        }
+
     }
 
 }

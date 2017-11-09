@@ -15,18 +15,25 @@ public class DemoController {
     @Autowired
     private DemoService demoService;
 
-    @RequestMapping("/zip")
-    public void zip(final HttpServletResponse response) {
-        response.setHeader("Content-Disposition","attachment; filename=\"demo.zip\"");
+    @RequestMapping("/baosZip")
+    public void baosZip(final HttpServletResponse response) {
+        response.setHeader("Content-Disposition","attachment; filename=\"baos.zip\"");
         response.setContentType("application/zip");
 
-        final ByteArrayOutputStream baos = demoService.zipIt();
+        final ByteArrayOutputStream baos = demoService.baosZip();
         try {
             response.getOutputStream().write(baos.toByteArray());
             baos.close();
         } catch (final IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @RequestMapping("/zosZip")
+    public void zosZip(final HttpServletResponse response) throws IOException {
+        response.setHeader("Content-Disposition","attachment; filename=\"zos.zip\"");
+        response.setContentType("application/zip");
+        demoService.zosZip(response.getOutputStream());
     }
     
 }
