@@ -31,9 +31,14 @@ dependencies {
 
     compile group: 'commons-io', name: 'commons-io', version: '2.6'
 
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+
+    compile("org.springframework.boot:spring-boot-starter-security")
+
     // end::actuator[]
     // tag::tests[]
     testCompile("org.springframework.boot:spring-boot-starter-test")
     // end::tests[]
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 }
 

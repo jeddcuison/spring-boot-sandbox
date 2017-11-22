@@ -42,4 +42,17 @@ public class DemoService {
         }
     }
 
+    public void zosZipWithErr(final OutputStream outputStream) {
+        try (final ZipOutputStream zos = new ZipOutputStream(outputStream)) {
+            zos.putNextEntry(new ZipEntry("testing.txt"));
+            writerService.writeWithErr(zos);
+        } catch (final IOException e) {
+            throw new DemoServiceException("Error zipping to stream!", e);
+        }
+    }
+
+    public void noResultException() {
+        throw new RuntimeException("No results!");
+    }
+
 }

@@ -3,11 +3,23 @@
 <head>
     <title>Spring Boot Sandbox</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script >
+        var noResultEx = function() {
+            location.href = "/noResultEx";
+        }
+    </script>
 </head>
 <body>
 <button onClick="window.open('/baosZip')">Download zip using ZipOutputStream(ByteArrayOutputStream)...</button>
 <br/>
 <br/>
-<button onClick="window.open('/zosZip')">Download zip using ZipOutputStream(resp.getOutputStream())...</button>
+<button onClick="location.href='/zosZip'">Download zip using ZipOutputStream(resp.getOutputStream())...</button>
+<br/>
+<br/>
+<button onClick="location.href='/zosWithErr'">Download zip with no error while streaming bytes..</button>
+<br/>
+<br/>
+<button onClick="noResultEx()">Download zip with no result exception..</button>
 </body>
 </html>
